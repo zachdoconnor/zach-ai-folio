@@ -50,14 +50,14 @@ export const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-surface/95 backdrop-blur-md border-b border-border' : 'bg-transparent'
+        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border/50 shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-[1100px] mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-xl font-serif font-bold text-foreground hover:text-primary transition-smooth"
+            className="text-xl font-serif font-bold text-white hover:text-primary-light transition-all duration-300"
           >
             Zach O'Connor
           </button>
@@ -68,15 +68,15 @@ export const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-medium transition-smooth relative ${
+                className={`text-sm font-semibold transition-all duration-300 relative ${
                   activeSection === link.id
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'text-primary-light'
+                    : 'text-foreground/80 hover:text-white'
                 }`}
               >
                 {link.label}
                 {activeSection === link.id && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-accent rounded-full" />
                 )}
               </button>
             ))}
@@ -86,7 +86,7 @@ export const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-foreground"
+            className="md:hidden text-white hover:text-primary-light"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,10 +100,10 @@ export const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-smooth ${
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                    ? 'gradient-accent text-white shadow-glow'
+                    : 'text-foreground/80 hover:bg-surface hover:text-white'
                 }`}
               >
                 {link.label}

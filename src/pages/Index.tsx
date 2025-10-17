@@ -3,10 +3,13 @@ import { HeroSection } from '@/components/HeroSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { ContactSection } from '@/components/ContactSection';
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { BackToTop } from '@/components/BackToTop';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       <Navigation />
       <main>
         <HeroSection />
@@ -14,6 +17,7 @@ const Index = () => {
         <ProjectsSection />
         <ContactSection />
       </main>
+      <BackToTop />
     </div>
   );
 };
