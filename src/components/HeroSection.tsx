@@ -14,7 +14,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden border-b-2 border-border/30"
     >
       {/* Enhanced animated background with radial gradient */}
       <div className="absolute inset-0 overflow-hidden">

@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 
 export const ResumeSection = () => {
   return (
-    <section id="resume" className="py-24 px-6 section-light">
+    <section id="resume" className="py-24 px-6 section-dark border-t-2 border-border/30">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">

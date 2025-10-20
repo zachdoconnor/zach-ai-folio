@@ -53,7 +53,7 @@ export const ProjectsSection = () => {
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 px-6 section-light">
+    <section id="projects" className="py-24 px-6 section-light border-t-2 border-border/30">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">

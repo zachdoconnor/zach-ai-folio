@@ -51,7 +51,7 @@ const certifications = [
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 px-6 section-dark">
+    <section id="experience" className="py-24 px-6 section-dark border-t-2 border-border/30">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">

@@ -45,7 +45,7 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 section-dark">
+    <section id="contact" className="py-24 px-6 section-light border-t-2 border-border/30">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
@@ -57,9 +57,9 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Contact Form */}
-          <Card className="p-8 gradient-card border-2 border-border shadow-lg">
+          <Card className="p-8 gradient-card border-2 border-border shadow-lg md:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
@@ -118,63 +118,45 @@ export const ContactSection = () => {
           </Card>
 
           {/* Contact Info & Social */}
-          <div className="space-y-6">
-            <Card className="p-8 gradient-card border-2 border-border shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-6">
-                Connect With Me
-              </h3>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <span>Indianapolis, IN</span>
+          <Card className="p-8 gradient-card border-2 border-border shadow-lg md:col-span-2">
+            <h3 className="text-xl font-serif font-semibold text-foreground mb-6">
+              Connect With Me
+            </h3>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-primary" />
                 </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <a href="mailto:zach@example.com" className="hover:text-primary transition-colors link-underline">
-                    zach@example.com
-                  </a>
+                <span>Indianapolis, IN</span>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Mail className="h-5 w-5 text-primary" />
                 </div>
+                <a href="mailto:zach@example.com" className="hover:text-primary transition-colors link-underline">
+                  zach@example.com
+                </a>
               </div>
+            </div>
 
-              <div className="space-y-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 rounded-lg border-2 border-border hover:border-primary/40 bg-background-alt/50 hover:bg-background-alt transition-all duration-300 group shadow-md hover:shadow-glow"
-                  >
-                    <social.icon className={`h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors`} />
-                    <span className="text-foreground group-hover:text-primary transition-colors font-medium">
-                      {social.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="p-8 gradient-card border-2 border-border shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-4">
-                Resume
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Download my full resume for detailed information about my experience and skills.
-              </p>
-              <Button
-                variant="outline"
-                className="w-full border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
-                onClick={() => window.open('/Zach_OConnor_Resume.pdf', '_blank')}
-              >
-                Download PDF
-              </Button>
-            </Card>
-          </div>
+            <div className="space-y-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-lg border-2 border-border hover:border-primary/40 bg-background-alt/50 hover:bg-background-alt transition-all duration-300 group shadow-md hover:shadow-glow"
+                >
+                  <social.icon className={`h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors`} />
+                  <span className="text-foreground group-hover:text-primary transition-colors font-medium">
+                    {social.label}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </Card>
         </div>
 
         {/* Footer */}
