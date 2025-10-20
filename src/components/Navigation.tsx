@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -13,6 +14,12 @@ export const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,13 +64,13 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-xl font-serif font-bold text-white hover:text-primary-light transition-all duration-300"
+            className="text-xl font-serif font-bold text-foreground hover:text-primary-light transition-all duration-300"
           >
             Zach O'Connor
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -71,7 +78,7 @@ export const Navigation = () => {
                 className={`text-sm font-semibold transition-all duration-300 relative ${
                   activeSection === link.id
                     ? 'text-primary-light'
-                    : 'text-foreground/80 hover:text-white'
+                    : 'text-foreground/80 hover:text-foreground'
                 }`}
               >
                 {link.label}
@@ -80,17 +87,47 @@ export const Navigation = () => {
                 )}
               </button>
             ))}
+            
+            {/* Theme Toggle - Desktop */}
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="text-foreground hover:text-primary-light transition-all duration-300"
+              >
+                {theme === 'dark' ? (
+                  <Sun size={20} className="transition-transform duration-300 rotate-0 hover:rotate-45" />
+                ) : (
+                  <Moon size={20} className="transition-transform duration-300 rotate-0 hover:-rotate-12" />
+                )}
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-white hover:text-primary-light"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
+          <div className="md:hidden flex items-center gap-2">
+            {/* Theme Toggle - Mobile */}
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="text-foreground hover:text-primary-light"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </Button>
+            )}
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-foreground hover:text-primary-light"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -103,7 +140,7 @@ export const Navigation = () => {
                 className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
                     ? 'gradient-accent text-white shadow-glow'
-                    : 'text-foreground/80 hover:bg-surface hover:text-white'
+                    : 'text-foreground/80 hover:bg-surface hover:text-foreground'
                 }`}
               >
                 {link.label}
