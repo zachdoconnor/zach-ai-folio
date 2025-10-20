@@ -45,16 +45,14 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 section-dark" style={{
-      background: 'linear-gradient(180deg, hsl(217, 33%, 17%) 0%, hsl(222, 47%, 11%) 100%)'
-    }}>
+    <section id="contact" className="py-24 px-6 section-dark">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
             Get In Touch
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto mb-6"></div>
-          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Let's discuss how we can work together on your next project
           </p>
         </div>
@@ -64,7 +62,7 @@ export const ContactSection = () => {
           <Card className="p-8 gradient-card border-2 border-border shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
                   Name
                 </label>
                 <Input
@@ -79,7 +77,7 @@ export const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
                   Email
                 </label>
                 <Input
@@ -94,7 +92,7 @@ export const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
                   Message
                 </label>
                 <Textarea
@@ -111,7 +109,7 @@ export const ContactSection = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full gradient-accent text-white shadow-glow shadow-glow-hover transition-all duration-300"
+                className="w-full gradient-accent text-primary-foreground shadow-glow shadow-glow-hover transition-all duration-300"
               >
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
@@ -122,22 +120,22 @@ export const ContactSection = () => {
           {/* Contact Info & Social */}
           <div className="space-y-6">
             <Card className="p-8 gradient-card border-2 border-border shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-white mb-6">
+              <h3 className="text-xl font-serif font-semibold text-foreground mb-6">
                 Connect With Me
               </h3>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3 text-foreground/80">
+                <div className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <span>Indianapolis, IN</span>
                 </div>
-                <div className="flex items-center gap-3 text-foreground/80">
+                <div className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
-                  <a href="mailto:zach@example.com" className="hover:text-primary-light transition-colors link-underline">
+                  <a href="mailto:zach@example.com" className="hover:text-primary transition-colors link-underline">
                     zach@example.com
                   </a>
                 </div>
@@ -152,8 +150,8 @@ export const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-4 rounded-lg border-2 border-border hover:border-primary/40 bg-background-alt/50 hover:bg-background-alt transition-all duration-300 group shadow-md hover:shadow-glow"
                   >
-                    <social.icon className={`h-5 w-5 text-muted-foreground group-hover:text-primary-light transition-colors`} />
-                    <span className="text-foreground group-hover:text-primary-light transition-colors font-medium">
+                    <social.icon className={`h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors`} />
+                    <span className="text-foreground group-hover:text-primary transition-colors font-medium">
                       {social.label}
                     </span>
                   </a>
@@ -162,15 +160,15 @@ export const ContactSection = () => {
             </Card>
 
             <Card className="p-8 gradient-card border-2 border-border shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-white mb-4">
+              <h3 className="text-xl font-serif font-semibold text-foreground mb-4">
                 Resume
               </h3>
-              <p className="text-foreground/80 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Download my full resume for detailed information about my experience and skills.
               </p>
               <Button
                 variant="outline"
-                className="w-full border-2 border-primary/60 text-primary hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
+                className="w-full border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
                 onClick={() => window.open('/Zach_OConnor_Resume.pdf', '_blank')}
               >
                 Download PDF

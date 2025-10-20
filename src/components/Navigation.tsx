@@ -7,6 +7,7 @@ const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'resume', label: 'Resume' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -77,8 +78,8 @@ export const Navigation = () => {
                 onClick={() => scrollToSection(link.id)}
                 className={`text-sm font-semibold transition-all duration-300 relative ${
                   activeSection === link.id
-                    ? 'text-primary-light'
-                    : 'text-foreground/80 hover:text-foreground'
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {link.label}
@@ -94,7 +95,7 @@ export const Navigation = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="text-foreground hover:text-primary-light transition-all duration-300"
+                className="text-foreground hover:text-primary transition-all duration-300"
               >
                 {theme === 'dark' ? (
                   <Sun size={20} className="transition-transform duration-300 rotate-0 hover:rotate-45" />
@@ -113,7 +114,7 @@ export const Navigation = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="text-foreground hover:text-primary-light"
+                className="text-foreground hover:text-primary"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
               </Button>
@@ -122,7 +123,7 @@ export const Navigation = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-foreground hover:text-primary-light"
+              className="text-foreground hover:text-primary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -139,8 +140,8 @@ export const Navigation = () => {
                 onClick={() => scrollToSection(link.id)}
                 className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
-                    ? 'gradient-accent text-white shadow-glow'
-                    : 'text-foreground/80 hover:bg-surface hover:text-foreground'
+                    ? 'gradient-accent text-primary-foreground shadow-glow'
+                    : 'text-muted-foreground hover:bg-surface hover:text-foreground'
                 }`}
               >
                 {link.label}

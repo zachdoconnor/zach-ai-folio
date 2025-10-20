@@ -54,11 +54,11 @@ export const ExperienceSection = () => {
     <section id="experience" className="py-24 px-6 section-dark">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
             Experience
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto mb-6"></div>
-          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Building automation solutions and optimizing systems across industries
           </p>
         </div>
@@ -67,9 +67,9 @@ export const ExperienceSection = () => {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center">
-              <Briefcase className="h-5 w-5 text-white" />
+              <Briefcase className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h3 className="text-2xl font-serif font-semibold text-white">
+            <h3 className="text-2xl font-serif font-semibold text-foreground">
               Professional Experience
             </h3>
           </div>
@@ -82,8 +82,8 @@ export const ExperienceSection = () => {
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <h4 className="text-xl font-semibold text-white mb-1">{exp.role}</h4>
-                    <p className="text-primary-light font-medium">{exp.company}</p>
+                    <h4 className="text-xl font-semibold text-foreground mb-1">{exp.role}</h4>
+                    <p className="text-primary font-medium">{exp.company}</p>
                   </div>
                   <Badge variant="outline" className={`mt-2 md:mt-0 border-primary/60 text-primary w-fit ${index === 0 ? 'bg-primary/10' : ''}`}>
                     {index === 0 ? '🌟 ' : ''}{exp.period}
@@ -91,7 +91,7 @@ export const ExperienceSection = () => {
                 </div>
                 <ul className="space-y-2.5">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="text-foreground/80 flex items-start gap-3">
+                    <li key={i} className="text-muted-foreground flex items-start gap-3">
                       <span className="text-primary mt-1.5 font-bold">•</span>
                       <span>{item}</span>
                     </li>
@@ -106,16 +106,16 @@ export const ExperienceSection = () => {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center">
-              <GraduationCap className="h-5 w-5 text-white" />
+              <GraduationCap className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h3 className="text-2xl font-serif font-semibold text-white">Education</h3>
+            <h3 className="text-2xl font-serif font-semibold text-foreground">Education</h3>
           </div>
 
           <Card className="p-6 gradient-card border-2 border-border shadow-lg">
             <div className="flex items-start justify-between">
               <div>
-                <h4 className="text-xl font-semibold text-white mb-1">{education.degree}</h4>
-                <p className="text-primary-light font-medium">{education.school}</p>
+                <h4 className="text-xl font-semibold text-foreground mb-1">{education.degree}</h4>
+                <p className="text-primary font-medium">{education.school}</p>
               </div>
               <Badge variant="outline" className="border-primary/60 text-primary">
                 {education.year}
@@ -128,9 +128,9 @@ export const ExperienceSection = () => {
         <div>
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center">
-              <Award className="h-5 w-5 text-white" />
+              <Award className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h3 className="text-2xl font-serif font-semibold text-white">Certifications</h3>
+            <h3 className="text-2xl font-serif font-semibold text-foreground">Certifications</h3>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -141,14 +141,14 @@ export const ExperienceSection = () => {
               >
                 <div className="flex items-start gap-3">
                   <div className="w-12 h-12 rounded-lg gradient-accent flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <Award className="h-6 w-6 text-white" />
+                    <Award className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-sm font-semibold text-white mb-1 line-clamp-2">
+                    <h4 className="text-sm font-semibold text-foreground mb-1 line-clamp-2">
                       {cert.title}
                     </h4>
                     <p className="text-xs text-muted-foreground">{cert.issuer}</p>
-                    <p className="text-xs text-primary-light font-medium mt-1">{cert.date}</p>
+                    <p className="text-xs text-primary font-medium mt-1">{cert.date}</p>
                   </div>
                 </div>
               </Card>

@@ -56,11 +56,11 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-6 section-light">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
             Projects
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto mb-6"></div>
-          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Showcasing automation solutions, AI integrations, and full-stack applications
           </p>
         </div>
@@ -98,10 +98,10 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-primary-light transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-foreground/80 mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -123,7 +123,7 @@ export const ProjectsSection = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex-1 border-2 border-primary/60 text-primary hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
+                    className="flex-1 border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
                     onClick={() => window.open(project.github, '_blank')}
                   >
                     <Github className="mr-2 h-4 w-4" />
@@ -131,7 +131,7 @@ export const ProjectsSection = () => {
                   </Button>
                   <Button
                     size="sm"
-                    className="flex-1 gradient-accent text-white shadow-glow-hover transition-all duration-300"
+                    className="flex-1 gradient-accent text-primary-foreground shadow-glow-hover transition-all duration-300"
                     onClick={() => window.open(project.demo, '_blank')}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />

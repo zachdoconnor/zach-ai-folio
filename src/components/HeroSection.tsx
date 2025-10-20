@@ -31,10 +31,10 @@ export const HeroSection = () => {
               <p className="text-primary text-sm font-semibold tracking-wider uppercase animate-slide-in">
                 Portfolio
               </p>
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-tight">
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground leading-tight">
                 Zach O'Connor
               </h1>
-              <p className="text-xl md:text-2xl text-foreground/90 font-light">
+              <p className="text-xl md:text-2xl text-muted-foreground font-light">
                 AI & Automation • Product & Systems
               </p>
             </div>
@@ -48,7 +48,7 @@ export const HeroSection = () => {
               <Button
                 onClick={() => scrollToSection('experience')}
                 size="lg"
-                className="gradient-accent hover:opacity-90 text-white shadow-glow shadow-glow-hover group transition-all duration-300"
+                className="gradient-accent hover:opacity-90 text-primary-foreground shadow-glow shadow-glow-hover group transition-all duration-300"
               >
                 View Experience
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
@@ -56,7 +56,7 @@ export const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-primary/60 text-primary hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
+                className="border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
                 onClick={() => window.open('/Zach_OConnor_Resume.pdf', '_blank')}
               >
                 <Download className="mr-2 h-4 w-4" />
