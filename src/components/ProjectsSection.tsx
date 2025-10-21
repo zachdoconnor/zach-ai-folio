@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Github, ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,52 +6,44 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: 'Enterprise Workflow Automation Platform',
-    description: 'Comprehensive automation solution integrating Salesforce, Power Automate, and custom APIs to streamline business processes.',
-    image: '🤖',
-    tags: ['Power Automate', 'Salesforce', 'REST API', 'Azure'],
-    category: 'automation',
+    title: 'Recipedia',
+    description: 'The goal of Recipedia is to allow users to gain cooking experience, while also saving money from eating out less. Recipedia embodies our goals by offering a unique experience for users to create a profile and build a virtual pantry that reflects their real-life kitchen. Users can easily add individual ingredients to their virtual pantry, and then use our advanced search filters to find recipes that match their preferences.',
+    agileFramework: 'Scrum',
+    image: '🍳',
+    features: [
+      'Google SSO Login',
+      'Google Maps',
+      'Recipes API',
+      'Customizable Profiles',
+      'Recipe Rating, Filtering, and Reviews',
+      'Collection of Highest Rated Recipes',
+      'Interactive Online Pantry'
+    ],
+    tags: ['React', 'Google API', 'REST API', 'OAuth'],
     github: 'https://github.com',
     demo: 'https://demo.com'
   },
   {
-    title: 'AI-Powered Data Analytics Dashboard',
-    description: 'Real-time analytics platform with ML-driven insights for business intelligence and predictive modeling.',
-    image: '📊',
-    tags: ['Python', 'SQL', 'Power BI', 'Machine Learning'],
-    category: 'data',
-    github: 'https://github.com',
-    demo: 'https://demo.com'
-  },
-  {
-    title: 'Customer Service Chatbot',
-    description: 'Intelligent chatbot leveraging NLP to automate customer support and reduce response times by 70%.',
-    image: '💬',
-    tags: ['Python', 'NLP', 'Azure Bot Service', 'React'],
-    category: 'web',
-    github: 'https://github.com',
-    demo: 'https://demo.com'
-  },
-  {
-    title: 'Inventory Management System',
-    description: 'Full-stack web application for real-time inventory tracking with automated reordering capabilities.',
-    image: '📦',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
-    category: 'web',
+    title: 'Community Exchange Hub',
+    description: 'The Community Exchange Hub is an innovative web application designed to strengthen local communities by facilitating the exchange of goods and services. This platform enables users to create and manage profiles, list and browse various items and services, and engage in a safe and community-focused environment.',
+    agileFramework: 'Kanban',
+    image: '🤝',
+    features: [
+      'Login/Registration',
+      'User Messaging',
+      'Create/Edit/Delete Posts',
+      'User Reviews',
+      'Admin Controls',
+      'Public Profiles',
+      'Customizable Profiles'
+    ],
+    tags: ['Full-Stack', 'User Auth', 'Messaging', 'CRUD'],
     github: 'https://github.com',
     demo: 'https://demo.com'
   }
 ];
 
-const categories = ['all', 'automation', 'web', 'data'];
-
 export const ProjectsSection = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(p => p.category === activeFilter);
-
   return (
     <section id="projects" className="py-24 px-6 section-light border-t-2 border-border/30">
       <div className="max-w-[1100px] mx-auto">
@@ -61,31 +53,13 @@ export const ProjectsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Showcasing automation solutions, AI integrations, and full-stack applications
+            Academic projects built during my time at Indiana University, showcasing full-stack development and Agile methodologies
           </p>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeFilter === category ? 'default' : 'outline'}
-              onClick={() => setActiveFilter(category)}
-              className={
-                activeFilter === category
-                  ? 'gradient-accent text-white shadow-glow'
-                  : 'border-2 border-border text-foreground hover:bg-surface hover:border-primary/40 transition-all duration-300'
-              }
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </Button>
-          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <Card
               key={index}
               className="group gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 overflow-hidden transition-all duration-300"
@@ -101,9 +75,27 @@ export const ProjectsSection = () => {
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
+                
+                <Badge variant="outline" className="mb-3 border-primary/60 text-primary w-fit">
+                  {project.agileFramework}
+                </Badge>
+                
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
+
+                {/* Features */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
+                  <ul className="space-y-1">
+                    {project.features.map((feature, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-5">
