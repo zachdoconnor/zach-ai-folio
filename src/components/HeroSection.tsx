@@ -39,7 +39,7 @@ export const HeroSection = () => {
               </p>
             </div>
 
-            <p className="text-lg text-foreground/80 leading-relaxed max-w-xl">
+            <p className="text-base text-foreground/80 leading-relaxed max-w-xl">
               I'm passionate about using technology to solve real business problems. With a background in data systems and AI automation, I help organizations bridge the gap between people, process, and technology. I design tools that make complex workflows simple, scalable, and efficient. At RipplePoint, I'm leading efforts to build a smarter CRM and automate the way teams manage data and operations.
             </p>
 

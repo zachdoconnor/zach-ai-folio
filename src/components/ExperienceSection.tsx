@@ -5,56 +5,58 @@ import { Badge } from '@/components/ui/badge';
 const experiences = [
   {
     company: 'RipplePoint',
-    role: 'Director of Product, AI & Automation',
-    period: 'Sep 2025 – Present',
     location: 'Remote',
-    description: [
-      'Leading the design and rollout of an AI-powered CRM platform to streamline internal operations and improve client management.',
-      'Overseeing automation initiatives that connect Outlook, SharePoint, and Power Automate to simplify communication and workflow tracking.',
-      'Partnering with developers and stakeholders to define system requirements, build wireframes, and ensure business alignment across departments.'
-    ]
-  },
-  {
-    company: 'RipplePoint',
-    role: 'Systems Engineer / Analyst',
-    period: 'Sep 2024 – Oct 2025',
-    location: 'Remote',
-    description: [
-      'Designed RipplePoint\'s next-generation CRM system by mapping workflows, gathering requirements, and delivering technical specifications.',
-      'Automated email categorization and data logging, saving over five hours per week for each project manager.',
-      'Integrated Jira and Power Automate to unify ticket tracking and improve cross-team collaboration.',
-      'Collaborated with developers to implement an AI-driven OCR model that matches invoices to contracts and reduces manual entry.'
-    ]
-  },
-  {
-    company: 'Momentum Life Sciences',
-    role: 'Systems Engineering Intern',
-    period: 'Jun 2023 – Aug 2023',
-    location: 'Hybrid – Indianapolis, IN',
-    description: [
-      'Worked in Salesforce Health Cloud to build new functionality, enhance dashboards, and test system updates.',
-      'Participated in daily Scrum meetings under the SAFe framework to align on progress and remove blockers.',
-      'Conducted stakeholder interviews to design dashboards that improved visibility across departments.'
+    roles: [
+      {
+        title: 'Director of Product, AI & Automation',
+        period: 'Sep 2025 – Present',
+        description: [
+          'Leading the design and rollout of an AI-powered CRM platform to streamline internal operations and improve client management.',
+          'Overseeing automation initiatives that connect Outlook, SharePoint, and Power Automate to simplify communication and workflow tracking.',
+          'Partnering with developers and stakeholders to define system requirements, build wireframes, and ensure business alignment across departments.'
+        ]
+      },
+      {
+        title: 'Systems Engineer / Analyst',
+        period: 'Sep 2024 – Oct 2025',
+        description: [
+          'Designed RipplePoint\'s next-generation CRM system by mapping workflows, gathering requirements, and delivering technical specifications.',
+          'Automated email categorization and data logging, saving over five hours per week for each project manager.',
+          'Integrated Jira and Power Automate to unify ticket tracking and improve cross-team collaboration.',
+          'Collaborated with developers to implement an AI-driven OCR model that matches invoices to contracts and reduces manual entry.'
+        ]
+      }
     ]
   },
   {
     company: 'Momentum Life Sciences',
-    role: 'CRM Database Intern',
-    period: 'May 2022 – Sep 2022',
     location: 'Indianapolis, IN',
-    description: [
-      'Led a team of interns to build and maintain a Salesforce Org integrated with Outreach, improving client tracking and reporting.',
-      'Cleaned and standardized CRM data to strengthen reporting accuracy and system reliability.'
-    ]
-  },
-  {
-    company: 'Momentum Life Sciences',
-    role: 'Business Development Intern',
-    period: 'Jun 2021 – Aug 2021',
-    location: 'Indianapolis, IN',
-    description: [
-      'Researched over 600 pipeline NDAs to identify new deal opportunities and support client outreach.',
-      'Presented findings to leadership and helped implement a new Salesforce tracking system for business development.'
+    roles: [
+      {
+        title: 'Systems Engineering Intern',
+        period: 'Jun 2023 – Aug 2023',
+        description: [
+          'Worked in Salesforce Health Cloud to build new functionality, enhance dashboards, and test system updates.',
+          'Participated in daily Scrum meetings under the SAFe framework to align on progress and remove blockers.',
+          'Conducted stakeholder interviews to design dashboards that improved visibility across departments.'
+        ]
+      },
+      {
+        title: 'CRM Database Intern',
+        period: 'May 2022 – Sep 2022',
+        description: [
+          'Led a team of interns to build and maintain a Salesforce Org integrated with Outreach, improving client tracking and reporting.',
+          'Cleaned and standardized CRM data to strengthen reporting accuracy and system reliability.'
+        ]
+      },
+      {
+        title: 'Business Development Intern',
+        period: 'Jun 2021 – Aug 2021',
+        description: [
+          'Researched over 600 pipeline NDAs to identify new deal opportunities and support client outreach.',
+          'Presented findings to leadership and helped implement a new Salesforce tracking system for business development.'
+        ]
+      }
     ]
   }
 ];
@@ -73,11 +75,11 @@ const education = [
 ];
 
 const certifications = [
-  { title: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft', date: '2024' },
-  { title: 'Microsoft Certified: Azure Fundamentals', issuer: 'Microsoft', date: '2024' },
-  { title: 'Microsoft 365 Certified: Fundamentals', issuer: 'Microsoft', date: '2024' },
-  { title: 'Google AI Essentials', issuer: 'Google', date: '2024' },
-  { title: 'Salesforce Certified Administrator (SCA)', issuer: 'Salesforce', date: '2023' },
+  { title: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft', date: '2025' },
+  { title: 'Microsoft Certified: Azure Fundamentals', issuer: 'Microsoft', date: '2025' },
+  { title: 'Microsoft 365 Certified: Fundamentals', issuer: 'Microsoft', date: '2025' },
+  { title: 'Google AI Essentials', issuer: 'Google', date: '2025' },
+  { title: 'Salesforce Certified Administrator (SCA)', issuer: 'Salesforce', date: '2025' },
   { title: 'Artificial Intelligence and Data Science for Leaders', issuer: 'University of Chicago', date: '2023' }
 ];
 
@@ -106,30 +108,42 @@ export const ExperienceSection = () => {
             </h3>
           </div>
 
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <Card
-                key={index}
-                className="p-6 gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 transition-all duration-300"
-              >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+          <div className="space-y-8">
+            {experiences.map((company, companyIndex) => (
+              <div key={companyIndex} className="space-y-4">
+                <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h4 className="text-xl font-semibold text-foreground mb-1">{exp.role}</h4>
-                    <p className="text-primary font-medium">{exp.company}</p>
+                    <h4 className="text-2xl font-semibold text-foreground">{company.company}</h4>
+                    <p className="text-muted-foreground text-sm">{company.location}</p>
                   </div>
-                  <Badge variant="outline" className={`mt-2 md:mt-0 border-primary/60 text-primary w-fit ${index === 0 ? 'bg-primary/10' : ''}`}>
-                    {index === 0 ? '🌟 ' : ''}{exp.period}
-                  </Badge>
                 </div>
-                <ul className="space-y-2.5">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-muted-foreground flex items-start gap-3">
-                      <span className="text-primary mt-1.5 font-bold">•</span>
-                      <span>{item}</span>
-                    </li>
+                
+                <div className="space-y-4 pl-4 border-l-2 border-primary/30">
+                  {company.roles.map((role, roleIndex) => (
+                    <Card
+                      key={roleIndex}
+                      className="p-6 gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 transition-all duration-300"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                          <h5 className="text-lg font-semibold text-foreground mb-1">{role.title}</h5>
+                        </div>
+                        <Badge variant="outline" className={`mt-2 md:mt-0 border-primary/60 text-primary w-fit ${companyIndex === 0 && roleIndex === 0 ? 'bg-primary/10' : ''}`}>
+                          {companyIndex === 0 && roleIndex === 0 ? '🌟 ' : ''}{role.period}
+                        </Badge>
+                      </div>
+                      <ul className="space-y-2.5">
+                        {role.description.map((item, i) => (
+                          <li key={i} className="text-muted-foreground flex items-start gap-3">
+                            <span className="text-primary mt-1.5 font-bold">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </Card>
                   ))}
-                </ul>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
