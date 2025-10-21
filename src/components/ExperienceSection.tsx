@@ -4,49 +4,81 @@ import { Badge } from '@/components/ui/badge';
 
 const experiences = [
   {
-    company: 'Tech Innovations Corp',
-    role: 'Senior Systems Engineer',
-    period: '2022 - Present',
+    company: 'RipplePoint',
+    role: 'Director of Product, AI & Automation',
+    period: 'Sep 2025 – Present',
+    location: 'Remote',
     description: [
-      'Led implementation of AI-powered automation solutions, reducing manual processing time by 60%',
-      'Architected enterprise workflow systems using Power Automate and custom APIs',
-      'Managed cross-functional teams to deliver scalable automation ecosystems'
+      'Leading the design and rollout of an AI-powered CRM platform to streamline internal operations and improve client management.',
+      'Overseeing automation initiatives that connect Outlook, SharePoint, and Power Automate to simplify communication and workflow tracking.',
+      'Partnering with developers and stakeholders to define system requirements, build wireframes, and ensure business alignment across departments.'
     ]
   },
   {
-    company: 'Digital Solutions LLC',
-    role: 'Automation Specialist',
-    period: '2020 - 2022',
+    company: 'RipplePoint',
+    role: 'Systems Engineer / Analyst',
+    period: 'Sep 2024 – Oct 2025',
+    location: 'Remote',
     description: [
-      'Developed and deployed 50+ automated workflows using Power Automate and Python',
-      'Integrated Salesforce CRM with various business intelligence tools',
-      'Reduced operational costs by 35% through process optimization'
+      'Designed RipplePoint\'s next-generation CRM system by mapping workflows, gathering requirements, and delivering technical specifications.',
+      'Automated email categorization and data logging, saving over five hours per week for each project manager.',
+      'Integrated Jira and Power Automate to unify ticket tracking and improve cross-team collaboration.',
+      'Collaborated with developers to implement an AI-driven OCR model that matches invoices to contracts and reduces manual entry.'
     ]
   },
   {
-    company: 'StartupHub Inc',
-    role: 'Junior Systems Analyst',
-    period: '2018 - 2020',
+    company: 'Momentum Life Sciences',
+    role: 'Systems Engineering Intern',
+    period: 'Jun 2023 – Aug 2023',
+    location: 'Hybrid – Indianapolis, IN',
     description: [
-      'Built data pipelines connecting SQL databases to analytics platforms',
-      'Created documentation and training materials for automation best practices',
-      'Supported deployment of cloud-based business applications'
+      'Worked in Salesforce Health Cloud to build new functionality, enhance dashboards, and test system updates.',
+      'Participated in daily Scrum meetings under the SAFe framework to align on progress and remove blockers.',
+      'Conducted stakeholder interviews to design dashboards that improved visibility across departments.'
+    ]
+  },
+  {
+    company: 'Momentum Life Sciences',
+    role: 'CRM Database Intern',
+    period: 'May 2022 – Sep 2022',
+    location: 'Indianapolis, IN',
+    description: [
+      'Led a team of interns to build and maintain a Salesforce Org integrated with Outreach, improving client tracking and reporting.',
+      'Cleaned and standardized CRM data to strengthen reporting accuracy and system reliability.'
+    ]
+  },
+  {
+    company: 'Momentum Life Sciences',
+    role: 'Business Development Intern',
+    period: 'Jun 2021 – Aug 2021',
+    location: 'Indianapolis, IN',
+    description: [
+      'Researched over 600 pipeline NDAs to identify new deal opportunities and support client outreach.',
+      'Presented findings to leadership and helped implement a new Salesforce tracking system for business development.'
     ]
   }
 ];
 
-const education = {
-  school: 'Indiana University',
-  degree: 'Bachelor of Science in Information Systems',
-  year: '2018'
-};
+const education = [
+  {
+    school: 'Indiana University – Kelley School of Business',
+    degree: 'Master of Science in Information Systems (Cybersecurity & Risk Analytics)',
+    year: 'May 2024'
+  },
+  {
+    school: 'Indiana University – Luddy School of Informatics, Computing, and Engineering',
+    degree: 'Bachelor of Science in Informatics, Cognate in Business',
+    year: 'May 2023'
+  }
+];
 
 const certifications = [
-  { title: 'Microsoft Certified: Power Platform Developer', issuer: 'Microsoft', date: '2023' },
-  { title: 'Salesforce Certified Administrator', issuer: 'Salesforce', date: '2022' },
-  { title: 'AWS Certified Solutions Architect', issuer: 'Amazon', date: '2022' },
-  { title: 'Google Cloud Professional', issuer: 'Google', date: '2021' },
-  { title: 'Python for Data Science', issuer: 'Coursera', date: '2020' }
+  { title: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft', date: '2024' },
+  { title: 'Microsoft Certified: Azure Fundamentals', issuer: 'Microsoft', date: '2024' },
+  { title: 'Microsoft 365 Certified: Fundamentals', issuer: 'Microsoft', date: '2024' },
+  { title: 'Google AI Essentials', issuer: 'Google', date: '2024' },
+  { title: 'Salesforce Certified Administrator (SCA)', issuer: 'Salesforce', date: '2023' },
+  { title: 'Artificial Intelligence and Data Science for Leaders', issuer: 'University of Chicago', date: '2023' }
 ];
 
 export const ExperienceSection = () => {
@@ -59,7 +91,7 @@ export const ExperienceSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Building automation solutions and optimizing systems across industries
+            Bridging data, automation, and business strategy to design systems that drive efficiency and meaningful impact.
           </p>
         </div>
 
@@ -111,17 +143,21 @@ export const ExperienceSection = () => {
             <h3 className="text-2xl font-serif font-semibold text-foreground">Education</h3>
           </div>
 
-          <Card className="p-6 gradient-card border-2 border-border shadow-lg">
-            <div className="flex items-start justify-between">
-              <div>
-                <h4 className="text-xl font-semibold text-foreground mb-1">{education.degree}</h4>
-                <p className="text-primary font-medium">{education.school}</p>
-              </div>
-              <Badge variant="outline" className="border-primary/60 text-primary">
-                {education.year}
-              </Badge>
-            </div>
-          </Card>
+          <div className="space-y-6">
+            {education.map((edu, index) => (
+              <Card key={index} className="p-6 gradient-card border-2 border-border shadow-lg">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="text-xl font-semibold text-foreground mb-1">{edu.degree}</h4>
+                    <p className="text-primary font-medium">{edu.school}</p>
+                  </div>
+                  <Badge variant="outline" className="border-primary/60 text-primary">
+                    {edu.year}
+                  </Badge>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Certifications */}

@@ -40,8 +40,7 @@ export const HeroSection = () => {
             </div>
 
             <p className="text-lg text-foreground/80 leading-relaxed max-w-xl">
-              Systems Engineer and AI Solutions Designer passionate about optimizing workflows,
-              building automation ecosystems, and bridging business and technology.
+              I'm passionate about using technology to solve real business problems. With a background in data systems and AI automation, I help organizations bridge the gap between people, process, and technology. I design tools that make complex workflows simple, scalable, and efficient. At RipplePoint, I'm leading efforts to build a smarter CRM and automate the way teams manage data and operations.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 animate-scale-in">
