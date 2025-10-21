@@ -1,5 +1,5 @@
 
-import { Github, ExternalLink } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const projects = [
   {
     title: 'Recipedia',
-    description: 'The goal of Recipedia is to allow users to gain cooking experience, while also saving money from eating out less. Recipedia embodies our goals by offering a unique experience for users to create a profile and build a virtual pantry that reflects their real-life kitchen. Users can easily add individual ingredients to their virtual pantry, and then use our advanced search filters to find recipes that match their preferences.',
+    description: 'The goal of Recipedia is to allow users to gain cooking experience, while also saving money from eating out less. Recipedia embodies our goals by offering a unique experience for users to create a profile and build a virtual pantry that reflects their real-life kitchen. Users can easily add individual ingredients to their virtual pantry, and then use our advanced search filters to find recipes that match their preferences. Recipedia provides users with an extensive collection of recipes from around the world, covering a wide range of cuisines and meal types. Our algorithms analyze the ingredients in your virtual pantry and match them with the most suitable recipes. This personalized approach ensures that you can always find the perfect recipe.',
     agileFramework: 'Scrum',
     image: '🍳',
     features: [
@@ -20,12 +20,11 @@ const projects = [
       'Interactive Online Pantry'
     ],
     tags: ['React', 'Google API', 'REST API', 'OAuth'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    github: 'https://github.com/zachdoconnor/Recepedia'
   },
   {
     title: 'Community Exchange Hub',
-    description: 'The Community Exchange Hub is an innovative web application designed to strengthen local communities by facilitating the exchange of goods and services. This platform enables users to create and manage profiles, list and browse various items and services, and engage in a safe and community-focused environment.',
+    description: 'The Community Exchange Hub is an innovative web application designed to strengthen local communities by facilitating the exchange of goods and services. This platform enables users to create and manage profiles, list and browse various items and services, and engage in a safe and community-focused environment. By harnessing the power of local networks, the Community Exchange Hub aims to foster a spirit of sharing and cooperation, making it easier for community members to connect, trade, and support one another.',
     agileFramework: 'Kanban',
     image: '🤝',
     features: [
@@ -38,8 +37,7 @@ const projects = [
       'Customizable Profiles'
     ],
     tags: ['Full-Stack', 'User Auth', 'Messaging', 'CRUD'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    github: 'https://github.com/zachdoconnor/Community-Echange-Hub'
   }
 ];
 
@@ -110,26 +108,16 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
-                    onClick={() => window.open(project.github, '_blank')}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="flex-1 gradient-accent text-primary-foreground shadow-glow-hover transition-all duration-300"
-                    onClick={() => window.open(project.demo, '_blank')}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </Button>
-                </div>
+                {/* Action Button */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
+                  onClick={() => window.open(project.github, '_blank')}
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  View Code
+                </Button>
               </div>
             </Card>
           ))}
