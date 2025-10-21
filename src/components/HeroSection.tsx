@@ -1,5 +1,6 @@
 import { ArrowDown, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import headshot from '@/assets/headshot.jpg';
 
 export const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -68,14 +69,11 @@ export const HeroSection = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-accent rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative w-full aspect-square rounded-2xl bg-gradient-card border-2 border-border overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary-light/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-40 h-40 rounded-full bg-gradient-accent mx-auto mb-4 flex items-center justify-center text-7xl shadow-glow">
-                      👨‍💻
-                    </div>
-                    <p className="text-muted-foreground text-sm font-medium">Your Professional Photo</p>
-                  </div>
-                </div>
+                <img 
+                  src={headshot} 
+                  alt="Zach O'Connor professional headshot" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
