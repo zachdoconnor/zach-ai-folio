@@ -20,7 +20,7 @@ const projects = [
       'Collection of Highest Rated Recipes',
       'Interactive Online Pantry'
     ],
-    tags: ['React', 'Google API', 'REST API', 'OAuth'],
+    tags: ['PHP', 'MySQL', 'JavaScript', 'Google OAuth', 'Google Maps API', 'Edamam API'],
     github: 'https://github.com/zachdoconnor/Recepedia'
   },
   {
@@ -37,7 +37,7 @@ const projects = [
       'Public Profiles',
       'Customizable Profiles'
     ],
-    tags: ['Full-Stack', 'User Auth', 'Messaging', 'CRUD'],
+    tags: ['Python', 'HTML/CSS', 'CRUD', 'Messaging', 'User Auth'],
     github: 'https://github.com/zachdoconnor/Community-Echange-Hub'
   }
 ];
@@ -61,9 +61,9 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 overflow-hidden transition-all duration-300"
+              className="group gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 overflow-hidden transition-all duration-300 flex flex-col h-full"
             >
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 {/* Project Thumbnail */}
                 <div className="relative mb-6 w-full aspect-video rounded-lg overflow-hidden bg-background-alt shadow-md group-hover:shadow-glow transition-shadow duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
@@ -100,29 +100,31 @@ export const ProjectsSection = () => {
                   </ul>
                 </div>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.tags.map((tag, i) => (
-                    <Badge
-                      key={i}
-                      variant="secondary"
-                      className="bg-secondary/80 text-foreground border border-border/50 text-xs px-3 py-1"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
+                {/* Tech Stack and Button Container - pushed to bottom */}
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.tags.map((tag, i) => (
+                      <Badge
+                        key={i}
+                        variant="secondary"
+                        className="bg-secondary/80 text-foreground border border-border/50 text-xs px-3 py-1"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
 
-                {/* Action Button */}
-                <Button
+                  {/* Action Button */}
+                  <Button
                   variant="outline"
                   size="sm"
                   className="w-full border-2 border-primary text-foreground hover:bg-primary/10 hover:border-primary hover:shadow-glow transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
-                  <Github className="mr-2 h-4 w-4" />
-                  View Code
-                </Button>
+                    <Github className="mr-2 h-4 w-4" />
+                    View Code
+                  </Button>
+                </div>
               </div>
             </Card>
           ))}
