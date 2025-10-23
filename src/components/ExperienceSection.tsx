@@ -80,7 +80,7 @@ const certifications = [
   { title: 'Microsoft 365 Certified: Fundamentals', issuer: 'Microsoft', date: '2025' },
   { title: 'Google AI Essentials', issuer: 'Google', date: '2025' },
   { title: 'Salesforce Certified Administrator (SCA)', issuer: 'Salesforce', date: '2025' },
-  { title: 'Artificial Intelligence and Data Science for Leaders', issuer: 'University of Chicago', date: '2023' }
+  { title: 'Artificial Intelligence and Data Science for Leaders', issuer: 'University of Chicago', date: '2024' }
 ];
 
 export const ExperienceSection = () => {

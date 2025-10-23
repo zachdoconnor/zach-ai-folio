@@ -27,19 +27,19 @@ export const ContactSection = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/zaoconnor/',
       color: 'hover:text-[#0A66C2]'
     },
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/zachdoconnor',
       color: 'hover:text-foreground'
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:zach@example.com',
+      href: 'mailto:zachdoconnor@gmail.com',
       color: 'hover:text-primary'
     }
   ];
@@ -134,8 +134,8 @@ export const ContactSection = () => {
                 <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
-                <a href="mailto:zach@example.com" className="hover:text-primary transition-colors link-underline">
-                  zach@example.com
+                <a href="mailto:zachdoconnor@gmail.com" className="hover:text-primary transition-colors link-underline">
+                  zachdoconnor@gmail.com
                 </a>
               </div>
             </div>

@@ -1,15 +1,16 @@
-
 import { Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import recepediaImg from '@/assets/recepedia.png';
+import communityImg from '@/assets/community.jpg';
 
 const projects = [
   {
     title: 'Recipedia',
     description: 'The goal of Recipedia is to allow users to gain cooking experience, while also saving money from eating out less. Recipedia embodies our goals by offering a unique experience for users to create a profile and build a virtual pantry that reflects their real-life kitchen. Users can easily add individual ingredients to their virtual pantry, and then use our advanced search filters to find recipes that match their preferences. Recipedia provides users with an extensive collection of recipes from around the world, covering a wide range of cuisines and meal types. Our algorithms analyze the ingredients in your virtual pantry and match them with the most suitable recipes. This personalized approach ensures that you can always find the perfect recipe.',
     agileFramework: 'Scrum',
-    image: '🍳',
+    image: recepediaImg,
     features: [
       'Google SSO Login',
       'Google Maps',
@@ -26,7 +27,7 @@ const projects = [
     title: 'Community Exchange Hub',
     description: 'The Community Exchange Hub is an innovative web application designed to strengthen local communities by facilitating the exchange of goods and services. This platform enables users to create and manage profiles, list and browse various items and services, and engage in a safe and community-focused environment. By harnessing the power of local networks, the Community Exchange Hub aims to foster a spirit of sharing and cooperation, making it easier for community members to connect, trade, and support one another.',
     agileFramework: 'Kanban',
-    image: '🤝',
+    image: communityImg,
     features: [
       'Login/Registration',
       'User Messaging',
@@ -63,10 +64,14 @@ export const ProjectsSection = () => {
               className="group gradient-card border-2 border-border card-hover shadow-lg hover:shadow-glow-hover hover:border-primary/40 overflow-hidden transition-all duration-300"
             >
               <div className="p-6">
-                {/* Project Thumbnail with gradient overlay */}
-                <div className="relative mb-6 w-full aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-primary/30 via-primary-light/20 to-accent/30 flex items-center justify-center text-6xl shadow-md group-hover:shadow-glow transition-shadow duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative z-10">{project.image}</span>
+                {/* Project Thumbnail */}
+                <div className="relative mb-6 w-full aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-glow transition-shadow duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} screenshot`}
+                    className="relative w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Project Info */}
