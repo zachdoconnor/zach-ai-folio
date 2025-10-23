@@ -72,7 +72,7 @@ export const HeroSection = () => {
                 <img 
                   src={headshot} 
                   alt="Zach O'Connor professional headshot" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

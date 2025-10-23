@@ -65,12 +65,12 @@ export const ProjectsSection = () => {
             >
               <div className="p-6">
                 {/* Project Thumbnail */}
-                <div className="relative mb-6 w-full aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-glow transition-shadow duration-300">
+                <div className="relative mb-6 w-full aspect-video rounded-lg overflow-hidden bg-background-alt shadow-md group-hover:shadow-glow transition-shadow duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                   <img 
                     src={project.image} 
                     alt={`${project.title} screenshot`}
-                    className="relative w-full h-full object-cover"
+                    className="relative w-full h-full object-contain"
                   />
                 </div>
 
