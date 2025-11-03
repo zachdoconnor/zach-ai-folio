@@ -68,11 +68,11 @@ export const HeroSection = () => {
           <div className="hidden md:block animate-fade-in">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-accent rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-              <div className="relative w-full aspect-square rounded-2xl bg-gradient-card border-2 border-border overflow-hidden shadow-lg">
+              <div className="relative w-full rounded-2xl bg-gradient-card border-2 border-border overflow-hidden shadow-lg">
                 <img 
                   src={headshot} 
                   alt="Zach O'Connor professional headshot" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
