@@ -65,7 +65,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          <div className="hidden md:block animate-fade-in">
+          <div className="hidden md:block animate-fade-in max-w-md mx-auto">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-accent rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative w-full rounded-2xl bg-gradient-card border-2 border-border overflow-hidden shadow-lg">
