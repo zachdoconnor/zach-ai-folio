@@ -10,11 +10,7 @@ const experiences = [
       {
         title: 'Director of Product, AI & Automation',
         period: 'Sep 2025 – Present',
-        description: [
-          'Leading the design and rollout of an AI-powered CRM platform to streamline internal operations and improve client management.',
-          'Overseeing automation initiatives that connect Outlook, SharePoint, and Power Automate to simplify communication and workflow tracking.',
-          'Partnering with developers and stakeholders to define system requirements, build wireframes, and ensure business alignment across departments.'
-        ]
+        description: []
       },
       {
         title: 'Systems Engineer / Analyst',
@@ -132,14 +128,16 @@ export const ExperienceSection = () => {
                           {companyIndex === 0 && roleIndex === 0 ? '🌟 ' : ''}{role.period}
                         </Badge>
                       </div>
-                      <ul className="space-y-2.5">
-                        {role.description.map((item, i) => (
-                          <li key={i} className="text-muted-foreground flex items-start gap-3">
-                            <span className="text-primary mt-1.5 font-bold">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {role.description.length > 0 && (
+                        <ul className="space-y-2.5">
+                          {role.description.map((item, i) => (
+                            <li key={i} className="text-muted-foreground flex items-start gap-3">
+                              <span className="text-primary mt-1.5 font-bold">•</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </Card>
                   ))}
                 </div>
